@@ -1,0 +1,638 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 25, 49);
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.header {
+    display: block;
+    justify-content: space-between;
+    align-items: start;
+    background-color: rgb(0, 25, 49);
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 200px;
+    padding: 100px 100px;
+    width: 80%;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    z-index: 1000;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.left-side {
+    flex-shrink: 0;
+    position: fixed;
+}
+
+.right-side {
+    flex: 1;
+    max-width: 50%;
+    overflow-wrap: break-word;
+    margin-left: 800px;
+}
+
+.about-me {
+    padding: 2px 10px;
+    background-color: rgb(0, 25, 49);
+    color: white;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.about-me p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: lightgray;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+
+/* FAQ Section */
+.faq-section {
+    padding: 30px 0px;
+    background-color: rgb(0, 25, 49);
+    color: white;
+    margin: 0 auto;
+    line-height: 1.5;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+.faq-title{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: rgb(0, 35, 69);
+    padding: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.faq-item:hover {
+    background-color: rgb(0, 50, 99);
+}
+
+.faq-question {
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+}
+.faq-question:hover {
+    color: rgb(0, 153, 255);
+}
+.faq-question:active {
+    color: rgb(0, 102, 204);
+}
+.faq-question:visited {
+    color: white;
+}
+
+.faq-question-text {
+    display: inline-block;
+    max-width: 90%;
+}
+
+.faq-question::after {
+    content: '▼';
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-icon {
+    transform: rotate(90deg);
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: lightgray;
+    display: none;
+    padding: 10px;
+    transition: all 0.7s ease-in-out;
+}
+.faq-item.active .faq-answer {
+    display: block;
+}   
+
+.faq-answer-text {
+    text-align: justify;
+    padding: 0 15px 0 0;
+}
+
+.faq-icon{
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+    vertical-align: left;
+   
+}
+.faq-icon:hover {
+    color: rgb(0, 153, 255);
+}
+.faq-icon:active {
+    color: rgb(0, 102, 204);
+}
+.faq-icon:visited {
+    color: white;
+}
+
+.faq-answer{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: lightgray;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(0, 25, 49);
+}
+
+.faq-answer .active{
+    display: block;
+    max-width: 150px;
+}
+.faq-item.active .faq-answer {
+    display: block;     
+}
+.faq-answer-text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: lightgray;
+    padding: auto;
+}
+
+.faq-answer-text p {
+    margin-bottom: 10px; 
+    padding: auto;
+}
+
+.faq-answer-text p:last-child {         
+    margin-bottom: 10px;  
+}
+   
+.faq-answer p {
+    margin-bottom: 10px;  
+}
+
+.faq-answer p:last-child {         
+    margin-bottom: 0;  
+}
+.faq-answer-text strong {
+    color: white;
+}
+
+.faq-answer-text a {
+    color: rgb(0, 153, 255);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.faq-answer-text a:hover {
+    color: rgb(0, 102, 204);
+}
+
+
+.experience {
+    padding: 30px 0px;
+    background-color: rgb(0, 25, 49);
+    color: white;
+    margin: 0 auto;
+    line-height: 1.5;
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.experience-one {
+    padding: 5px 0px;
+    background-color: rgb(0, 25, 49);
+    color: white;
+    margin: 0 auto;
+    line-height: 1.5;
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.experience-two {
+    padding: 5px 0px;
+    background-color: rgb(0, 25, 49);
+    color: white;
+    margin: 0 auto;
+    line-height: 1.5;
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.experience:hover {
+    padding: 50px 5px;
+    background-color: rgb(0, 25, 49);
+    border-radius: 10px;
+    border: 1px solid rgb(71, 129, 162);
+    transition: 0.7s;
+    box-shadow: 10px 10px 10px rgb(71, 129, 162);
+    cursor: pointer;
+}
+
+.experience:hover .year p {
+    display: none;
+}
+
+.experience-one:hover {
+    padding: 50px 5px;
+    background-color: rgb(0, 25, 49);
+    border-radius: 10px;
+    border: 1px solid rgb(71, 129, 162);
+    transition: 0.7s;
+    box-shadow: 10px 10px 10px rgb(71, 129, 162);
+    cursor: pointer;
+}
+
+.experience-two:hover {
+    padding: 50px 5px;
+    background-color: rgb(0, 25, 49);
+    border-radius: 10px;
+    border: 1px solid rgb(71, 129, 162);
+    transition: 0.7s;
+    box-shadow: 10px 10px 10px rgb(71, 129, 162);
+    cursor: pointer;
+}
+
+.experience-one:hover .year p {
+    display: none;
+}
+
+.experience-two:hover .year p {
+    display: none;
+}
+.year p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: lightgray;
+    margin-top: 13px;
+    text-align: left;
+    position: absolute;
+}
+
+.position {
+    margin-right: 50px;
+    width: 100%;
+    display: block;
+    align-items: center;
+    padding-left: 70px;
+    position: relative;
+}
+
+.position h4 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.position p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: lightgray;
+    text-align: left;
+    position: relative;
+}
+
+.experience .position .tools,
+.experience-one .position .tools {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.experience .position .tools,
+.experience-two .position .tools {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tools button {
+    background-color: rgb(53, 133, 187);
+    color: rgb(0, 21, 41);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.tools button:hover {
+    background-color: rgb(0, 102, 204);
+    transition: 0.3s;
+    color: turquoise;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+.social-icons a:hover {
+    color: rgb(0, 153, 255);
+    transition: 0.3s;
+    
+}
+
+.social-icons a:active {
+    color: rgb(0, 102, 204);
+}
+
+.social-icons a:visited {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 400px;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.logo {
+    display: inline-block;
+    text-align: justify;
+    align-items: center;
+}
+
+.logo h4 {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+}
+
+.logo h1 {
+    font-size: 40px;
+}
+
+.logo p {
+    font-size: 15px;
+    font-weight: 200;
+    color: lightgray;
+    line-height: 1.5em;
+    margin-top: 10px;
+}
+
+.line-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.line-flex:hover hr {
+    border: 1px solid rgb(0, 153, 255);
+    width: 60px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.line-flex:hover .nav-item a {
+    color: rgb(0, 153, 255);
+    font-size: 50px;
+}
+
+.line-flex:active .nav-item a {
+    color: rgb(0, 102, 204);
+}
+
+.line-flex:visited .nav-item a {
+    color: white;
+}
+
+hr {
+    border: 0.5px solid rgb(148, 146, 146);
+    width: 30px;
+    margin: 0;
+}
+
+.nav-links {
+    display: block;
+    align-items: start;
+    padding-top: 80px;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: inline-block;
+    align-items: center;
+}
+
+.nav-links ul li {
+    display: block;
+    margin: 15px 0;
+}
+
+.nav-links ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: rgb(0, 153, 255);
+}
+
+.nav-links ul li a:active {
+    color: rgb(0, 102, 204);
+}
+
+.nav-links ul li a:visited {
+    color: white;
+}
+
+/* Form */
+
+
+
+.form-body {
+    margin: 0;
+    background: rgb(0, 25, 49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+    
+}
+
+.container {
+    width: 500px;
+    color: #fff;
+    text-align: center;
+    top: -100px;
+    
+}
+.container h1, .container p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px; 
+}      
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #4fd1ff;
+    padding: 10px 5px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+::placeholder {
+    color: #9bdfff;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #fff;
+    color: rgb(0, 25, 49);
+}
+
+.error {
+    color: #ffb3b3;
+    font-size: 12px;
+    height: 14px;
+    display: block;
+}
+
+/* Image Grid */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h2 {
+  margin: 12px 0 6px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  color: turquoise;
+  line-height: 1.5;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: rgb(0, 153, 255);
+  transition: color 0.3s ease;
+}
+a.card-link {
+  text-decoration: none;
+  color: white;
+}
+a.card-link:hover {
+  background-color: rgb(0, 153, 255);
+  transition: background-color 0.3s ease;
+}
+a.card-link:active {
+  background-color: rgb(0, 153, 255);
+}
+a.card-link:visited {
+  color: inherit;
+}
+
